@@ -25,4 +25,21 @@ FROM `responsive-gist-387019.tekniplex.172_FY2023`
 
 group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14)
 
+,discount_fields as (  
+SELECT distinct 
+  ENTITY,
+  FY as Year,
+  LEFT(Transaction_Date, 2) AS month,
+  Customer_Name, 
+  SKU, 
+  currency,
+  sum(Sales_Amount) as Sales_2,
+  sum(Return) as return,
+  sum(Cash_Discount),
+  sum(Rebate),
+  sum(Net_Sales)
+Transaction_Date FROM `responsive-gist-387019.tekniplex.172_discounts` 
+group by 
+1,2,3,4,5,6)
+
 select * from all_fields
