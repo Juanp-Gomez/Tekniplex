@@ -42,4 +42,20 @@ Transaction_Date FROM `responsive-gist-387019.tekniplex.172_discounts`
 group by 
 1,2,3,4,5,6)
 
+,final_172 as(
+select
+a.*,
+b.Sales_2,
+b.return,
+b.cash_discount,
+b.rebate,
+b.net_sales
+from all_fields a
+left join discount_fields b on a.entity=b.entity 
+ and a.year=b.year 
+  and safe_cast(a.month as string) = safe_cast(b.month as string)
+ and a.sku= b.sku
+  and a.customer_name= b.customer_name
+)
+
 select * from all_fields
