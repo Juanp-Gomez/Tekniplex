@@ -29,7 +29,7 @@ group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14)
 SELECT distinct 
   ENTITY,
   FY as Year,
-  LEFT(Transaction_Date, 2) AS month,
+  safe_cast(LEFT(Transaction_Date, 2) as float64) as month,
   Customer_Name, 
   SKU, 
   currency,
