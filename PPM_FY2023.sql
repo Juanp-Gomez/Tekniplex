@@ -80,7 +80,8 @@ group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
   null as Discount_Rebate_Amount,
   null as Return_Tagging,
   Variacion_Raw_Material,
-  Variation_X_Operation
+  Variation_X_Operation,
+  coalesce(Variacion_Raw_Material,0)+coalesce(Variation_X_Operation,0) as Total_variation
 
 from(select *,
 case when safe_cast(month as string)= '1' then 0.0504556
