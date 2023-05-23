@@ -76,7 +76,7 @@ from(select *,
 case when safe_cast(month as string)= '1' then 1.0222718
   when safe_cast(month as string) = '2' then 1.028073
   when safe_cast(month as string) = '3' then 1.0325446
-  when safe_cast(month as string) = '4' then 1.0325446 -- hay que actualizar con tasa de abril
+  when safe_cast(month as string) = '4' then 1.0386896 
   when safe_cast(month as string) = '7' then 1.0193565
   when safe_cast(month as string) = '8' then 1.0156959
   when safe_cast(month as string) = '9' then 1.0073204
