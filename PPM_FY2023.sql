@@ -40,7 +40,7 @@ group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
 
 ,final_PPM_FY23 as(
   select 
-  concat( entity, 'PPMex') as Entity,
+  concat( entity, '-PPMex') as Entity,
   Business_Unit,
   'Plastic' as Plant_Business_line,
   cast(year as integer) as Year,
