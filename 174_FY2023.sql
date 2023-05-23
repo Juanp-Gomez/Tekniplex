@@ -76,7 +76,7 @@ select
   null as Sum_of_Units____,
   null as Kg_sales,
   (sales/TC) as Sales_USD,
-  ((Standard_material + standard_labor + standard_OH )/TC) as Sum_of_costs,
+ ((COALESCE(Standard_material, 0) + COALESCE(standard_labor, 0) + COALESCE(standard_OH, 0) )/TC) as Sum_of_costs,
   (standard_material/TC) as Raw_Material_USD,
   (standard_labor/TC) as Operating_Cost__including_Direct_Labor__USD,
   (standard_OH/ TC) as Indirect_Cost__including_OH__USD,
