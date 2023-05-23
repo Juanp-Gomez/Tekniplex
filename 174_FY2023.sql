@@ -80,7 +80,7 @@ select
   (standard_material/TC) as Raw_Material_USD,
   (standard_labor/TC) as Operating_Cost__including_Direct_Labor__USD,
   (standard_OH/ TC) as Indirect_Cost__including_OH__USD,
-  ((sales - COALESCE(Discount_Rebate_Amount, 0) - COALESCE(_Return_Tagging_, 0)) /TC) as Sales_USD_w_discount, 
+  ((COALESCE(sales,0) - COALESCE(Discount_Rebate_Amount, 0) - COALESCE(_Return_Tagging_, 0)) /TC) as Sales_USD_w_discount, 
   null as Sum_of_costs__Adjustado_,
   null as Raw_Material_USD__Adjustado_,
   null as Operating_Cost__including_Direct_Labor__USD__Adjustado_,
