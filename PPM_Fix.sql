@@ -119,4 +119,20 @@ where month in (10, 11, 12, 1 ,2 ,3)
 group by 1,2,3,4,5,6
 */
 
+/*select Entity, customer_ID, customer_name, Negocio_Intercompany_Transaction_Tagging, 
+sum(Sales_USD_w_discount) as Sales,
+sum(Sum_of_costs) as Costs, 
+sum(Raw_Material_USD) as Raw_Mat, 
+sum(Operating_Cost__including_Direct_Labor__USD) as Operating_cost,
+sum(Indirect_Cost__including_OH__USD) as Ind_Cost,
+sum(Variacion_Raw_Material) as VarRM,
+sum(Variation_X_Operation) as VarOP,
+sum(Total_variation) as Total_Var
+
+from final_PPM_FY23 
+where month in (10, 11, 12, 1 ,2 ,3)
+
+group by 1,2,3,4
+*/
+
 
