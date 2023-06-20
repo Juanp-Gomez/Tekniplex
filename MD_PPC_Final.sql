@@ -52,6 +52,7 @@ case when year = 2022 and _month = 5 then 0.0002572
 from ( select *,
 case when Intercompany_Transaction_Tagging = '0' then ''
     when Intercompany_Transaction_Tagging = '#N/A' then ''
+    when Intercompany_Transaction_Tagging is null then ''
     when Intercompany_Transaction_Tagging = 'Interco.' then '1'
     when Intercompany_Transaction_Tagging = 'INTERCOMPANY  ' then '1'
     end as Intercompany,
