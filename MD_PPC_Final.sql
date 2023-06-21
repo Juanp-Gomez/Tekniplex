@@ -78,7 +78,7 @@ Customer_Name,
 customer_location,
 cust_group,
 SKU,
-sku_description,
+first_value(sku_description) over(partition by SKU order by sku_description desc ) as sku_description,
 ---- Homologation
 case when primary_substrate = 'PAPER'then 'paper'
     when primary_substrate = 'PET' then 'plastic'
